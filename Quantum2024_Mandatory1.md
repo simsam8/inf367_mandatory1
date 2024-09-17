@@ -1,3 +1,8 @@
+---
+header-includes:
+- \usepackage{braket}
+---
+
 # Coding part
 
 Can be found in [notebook](./Quantum2024_MandatoryI_Coding.ipynb)
