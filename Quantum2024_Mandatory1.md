@@ -1,6 +1,7 @@
 ---
 header-includes:
 - \usepackage{braket}
+- \usepackage{graphicx}
 ---
 
 # Coding part
@@ -76,6 +77,45 @@ $$
 ### CZ-gate, bottom qubit as control, compute new state in standard basis and X-basis
 
 
+$$
+\begin{aligned}\\
+Z\rotatebox[origin=c]{180}{C} &= \ket0 \bra0 \otimes Z + \ket1 \bra1 \otimes I\\
+&=\ket0\bra0 \otimes (\ket0\bra0 - \ket1\bra1) + \ket1\bra1 \otimes (\ket0\bra0 + \ket1\bra1)\\
+&=\ket{00}\bra{00} - \ket{01}\bra{01} + \ket{10}\bra{10} + \ket{11}\bra{11}
+\end{aligned}\\
+$$
+
+Computing in standard basis:
+
+$$
+\begin{aligned}\\
+Z\rotatebox[origin=c]{180}{C} \ket{\phi} &= \ket{00}\bra{00}-\ket{01}\bra{01}+\ket{10}\bra{10}+\ket{11}\bra{11}\\
+&\quad \cdot \frac{1}{\sqrt{6}}(\ket{00} + (1+i)\ket{01} + (1-i)\ket{10} + \ket{11})\\
+&= \frac{1}{\sqrt{6}}(\ket{00} - (1+i)\ket{01} + (1-i)\ket{10} + \ket{11})
+\end{aligned}\\
+$$
+
+Computing in X-basis:
+
+$\ket0 = \frac{1}{\sqrt{2}}(\ket++\ket-)\\$
+$\ket1 = \frac{1}{\sqrt{2}}(\ket+-\ket-)\\$
+
+
+$\ket{00} = \frac{1}{2}(\ket{++}+\ket{+-}+\ket{-+}+\ket{--})\\$
+$\ket{01} = \frac{1}{2}(\ket{++}-\ket{+-}+\ket{-+}-\ket{--})\\$
+$\ket{10} = \frac{1}{2}(\ket{++}+\ket{+-}-\ket{-+}-\ket{--})\\$
+$\ket{11} = \frac{1}{2}(\ket{++}-\ket{+-}-\ket{-+}+\ket{--})\\$
+
+
+$$
+\begin{aligned}\\
+Z\rotatebox[origin=c]{180}{C} \ket{\phi} &= \frac{1}{2\sqrt{6}}(\ket{++}+\ket{+-}+\ket{-+}+\ket{--}\\
+&\quad -(1+i) (\ket{++}-\ket{+-}+\ket{-+}-\ket{--})\\
+&\quad +(1-i) (\ket{++}+\ket{+-}-\ket{-+}-\ket{--})\\
+&\quad + \ket{++}-\ket{+-}-\ket{-+}+\ket{--})\\
+&=\frac{1}{\sqrt{6}}((1-i)\ket{++} + \ket{+-} -\ket{-+} + (1+i)\ket{--})\\
+\end{aligned}\\
+$$
 
 
 
