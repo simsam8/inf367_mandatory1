@@ -99,14 +99,17 @@ $$
 
 Computing in X-basis:
 
-$\ket0 = \frac{1}{\sqrt{2}}(\ket++\ket-)\\$
-$\ket1 = \frac{1}{\sqrt{2}}(\ket+-\ket-)\\$
+$\ket0 = \frac{1}{\sqrt{2}}(\ket++\ket-)$
 
+$\ket1 = \frac{1}{\sqrt{2}}(\ket+-\ket-)$
 
-$\ket{00} = \frac{1}{2}(\ket{++}+\ket{+-}+\ket{-+}+\ket{--})\\$
-$\ket{01} = \frac{1}{2}(\ket{++}-\ket{+-}+\ket{-+}-\ket{--})\\$
-$\ket{10} = \frac{1}{2}(\ket{++}+\ket{+-}-\ket{-+}-\ket{--})\\$
-$\ket{11} = \frac{1}{2}(\ket{++}-\ket{+-}-\ket{-+}+\ket{--})\\$
+$\ket{00} = \frac{1}{2}(\ket{++}+\ket{+-}+\ket{-+}+\ket{--})$
+
+$\ket{01} = \frac{1}{2}(\ket{++}-\ket{+-}+\ket{-+}-\ket{--})$
+
+$\ket{10} = \frac{1}{2}(\ket{++}+\ket{+-}-\ket{-+}-\ket{--})$
+
+$\ket{11} = \frac{1}{2}(\ket{++}-\ket{+-}-\ket{-+}+\ket{--})$
 
 
 $$
