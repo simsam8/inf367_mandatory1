@@ -67,8 +67,7 @@ $$
 &\quad + \ket{11}\bra{00}\ket{\phi}\quad \to 2\ket{11}\\
 &\quad - \ket{11}\bra{01}\ket{\phi}\quad \to i\ket{11}\\
 &\quad - \ket{11}\bra{10}\ket{\phi}\quad \to -i\ket{11}\\
-&\quad + \ket{11}\bra{11}\ket{\phi}\quad \to 0) \\
-
+&\quad + \ket{11}\bra{11}\ket{\phi}\quad \to 0)\\
 &= \frac{1}{2\sqrt{6}}(2\ket{00} + 2(1+i)\ket{01} + 2(1-i)\ket{10} + 2\ket{11}) \\
 &= \frac{1}{\sqrt{6}}(\ket{00} + (1+i)\ket{01} + (1-i)\ket{10} + \ket{11})\\
 \end{aligned}\\
