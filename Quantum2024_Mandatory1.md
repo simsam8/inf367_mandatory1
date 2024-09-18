@@ -11,8 +11,7 @@ Can be found in [notebook](./Quantum2024_MandatoryI_Coding.ipynb)
 
 ## Quantum States and Quantum Gates 
 
-### Task 1
-
+### Express the state and show entanglement
 
 Rewrite $\ket{\phi}$ in the standard basis:
 
@@ -37,7 +36,7 @@ $$
 
 Either $\beta$ or $\delta$ needs to be zero, but that contradicts the other terms. Thus $\ket{\phi}$ is entangeled.
 
-### Task 2
+### Apply a Hadamard layer and compute the new state in the standard basis
 
 $$
 \begin{aligned} \\
@@ -52,11 +51,33 @@ $$
 
 $$
 \begin{aligned}\\
-(H \otimes H) \ket{\phi} &= \\
+\ket{\phi} &=\frac{1}{\sqrt{6}}(2\ket{00}-i(\ket{01} - \ket{10})) \\
+(H \otimes H) \ket{\phi} &=\frac{1}{2} (\ket{00} \bra{00}\ket{\phi} \quad\to -i\ket{00}\\
+&\quad + \ket{00}\bra{01}\ket{\phi}\quad \to i\ket{00}\\
+&\quad + \ket{00}\bra{10}\ket{\phi}\quad \to i\ket{00}\\
+&\quad + \ket{00}\bra{11}\ket{\phi}\quad \to 0\\
+&\quad + \ket{01}\bra{00}\ket{\phi}\quad \to 2\ket{01}\\
+&\quad - \ket{01}\bra{01}\ket{\phi}\quad \to i\ket{01}\\
+&\quad + \ket{01}\bra{10}\ket{\phi}\quad \to i\ket{01}\\
+&\quad - \ket{01}\bra{11}\ket{\phi}\quad \to 0\\
+&\quad + \ket{10}\bra{00}\ket{\phi}\quad \to 2\ket{10}\\
+&\quad + \ket{10}\bra{01}\ket{\phi}\quad \to -i\ket{10}\\
+&\quad - \ket{10}\bra{10}\ket{\phi}\quad \to -i\ket{10}\\
+&\quad - \ket{10}\bra{11}\ket{\phi}\quad \to 0\\
+&\quad + \ket{11}\bra{00}\ket{\phi}\quad \to 2\ket{11}\\
+&\quad - \ket{11}\bra{01}\ket{\phi}\quad \to i\ket{11}\\
+&\quad - \ket{11}\bra{10}\ket{\phi}\quad \to -i\ket{11}\\
+&\quad + \ket{11}\bra{11}\ket{\phi}\quad \to 0) \\
+
+&= \frac{1}{2\sqrt{6}}(2\ket{00} + 2(1+i)\ket{01} + 2(1-i)\ket{10} + 2\ket{11}) \\
+&= \frac{1}{\sqrt{6}}(\ket{00} + (1+i)\ket{01} + (1-i)\ket{10} + \ket{11})\\
 \end{aligned}\\
 $$
 
-### Task 3
+### CZ-gate, bottom qubit as control, compute new state in standard basis and X-basis
+
+
+
 
 
 ## Measurment Operators
