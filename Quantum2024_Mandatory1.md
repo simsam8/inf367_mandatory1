@@ -128,7 +128,115 @@ $$
 
 ### Task 1
 
+
+$$
+\begin{aligned}\\
+U &= (CX \otimes Z) \cdot C(I\otimes X) \cdot (H \otimes X \otimes I)\\
+U &= \qquad\left[\begin{array}{c c|c c|c c|c c}
+    1&&&&&&&\\ 
+    &-1&&&&&&\\ 
+    \hline 
+    &&1&&&&&\\ 
+    &&&-1&&&&\\ 
+    \hline 
+    &&&&&&1&\\ 
+    &&&&&&&-1\\ 
+    \hline 
+    &&&&1&&&\\ 
+    &&&&&-1&&\\ 
+\end{array}\right]\\
+&\cdot\;\;\quad\quad
+\left[\begin{array}{c c|c c|c c|c c} 
+    1&&&&&&&\\ 
+    &1&&&&&&\\ 
+    \hline 
+    &&1&&&&&\\ 
+    &&&1&&&&\\ 
+    \hline 
+    &&&&&1&&\\ 
+    &&&&1&&&\\ 
+    \hline 
+    &&&&&&&1\\ 
+    &&&&&&1&\\ 
+\end{array}\right]\\
+&\cdot
+\frac{1}{\sqrt2}\left[\begin{array}{c c|c c|c c|c c} 
+    &&1&&&&1&\\ 
+    &&&1&&&&1\\ 
+    \hline 
+    1&&&&1&&&\\ 
+    &1&&&&1&&\\ 
+    \hline 
+    &&1&&&&-1&\\ 
+    &&&1&&&&-1\\ 
+    \hline 
+    1&&&&-1&&&\\ 
+    &1&&&&-1&&\\ 
+\end{array}\right]\\
+&=\frac{1}{\sqrt2}
+\left[\begin{array}{c c|c c|c c|c c} 
+    &&1&&&&1&\\ 
+    &&&-1&&&&-1\\ 
+    \hline 
+    1&&&&1&&&\\ 
+    &-1&&&&-1&&\\ 
+    \hline 
+    &1&&&&-1&&\\ 
+    -1&&&&1&&&\\ 
+    \hline 
+    &&&1&&&&-1\\ 
+    &&-1&&&&1&\\ 
+\end{array}\right]\\
+\end{aligned}\\
+$$
+
 ### Task 2
+
+$$
+\begin{aligned}\\
+U\ket{000} &= \frac{1}{\sqrt2}
+\left[\begin{array}{c c|c c|c c|c c} 
+    &&1&&&&1&\\ 
+    &&&-1&&&&-1\\ 
+    \hline 
+    1&&&&1&&&\\ 
+    &-1&&&&-1&&\\ 
+    \hline 
+    &1&&&&-1&&\\ 
+    -1&&&&1&&&\\ 
+    \hline 
+    &&&1&&&&-1\\ 
+    &&-1&&&&1&\\ 
+\end{array}\right]
+\cdot
+\begin{bmatrix} 1\\\\\\\\\\\\\\\\ \end{bmatrix}\\
+&=\frac{1}{\sqrt2}\begin{bmatrix} \\\\1\\\\\\-1\\\\\\ \end{bmatrix}
+=\frac{1}{\sqrt{2}}(\ket{010} - \ket{101})
+\end{aligned}\\
+$$
+
+We can write a statevector with 3 qubits like this:
+
+$\ket{\phi} = (a_1\ket0 + b_1\ket1) \otimes (a_2\ket0 + b_2\ket1) \otimes (a_3\ket0 + b_3\ket1)$
+
+For the state $\ket{\phi}$ these are the coefficients.
+The state is entangeled as none of the $a$'s and $b$'s 
+can be $0$, but most products are $0$, thus there is a contradiction 
+and the state is entangeled.
+
+$$
+\begin{cases}
+    a_1 a_2 a_3 = 0 \\ 
+    a_1 a_2 b_3 = 0 \\
+    a_1 b_2 a_3 = \frac{1}{\sqrt{2}} \\
+    a_1 b_2 b_3 = 0 \\
+    b_1 a_2 a_3 = 0 \\
+    b_1 a_2 b_3 = -\frac{1}{\sqrt{2}} \\
+    b_1 b_2 a_3 = 0 \\
+    b_1 b_2 b_3 = 0 \\
+\end{cases}
+$$
+
 
 ### Task 3
 
