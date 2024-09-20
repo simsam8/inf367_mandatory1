@@ -210,7 +210,7 @@ U\ket{000} &= \frac{1}{\sqrt2}
 \end{array}\right]
 \cdot
 \begin{bmatrix} 1\\\\\\\\\\\\\\\\ \end{bmatrix}\\
-&=\frac{1}{\sqrt2}\begin{bmatrix} \\\\1\\\\\\-1\\\\\\ \end{bmatrix}
+&=\frac{1}{\sqrt2}\begin{bmatrix} \\\\ 1\\\\\\ -1\\\\\\ \end{bmatrix}
 =\frac{1}{\sqrt{2}}(\ket{010} - \ket{101})
 \end{aligned}\\
 $$
