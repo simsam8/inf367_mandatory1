@@ -124,7 +124,7 @@ $$
 
 
 
-## Measurment Operators
+## Measurement Operators
 
 ### Task 1
 
@@ -240,13 +240,15 @@ $$
 
 ### Task 3
 
+Defining the measurement operator $M$:
+
 $$
 \begin{aligned}
 M &= I \otimes (Swap \cdot CX \cdot Swap) \cdot (H \otimes Y \otimes I)\\
-M &= 1 \cdot (\ket{010}\bra{010} - \ket{011}\bra{011} + \ket{110}\bra{110} - \ket{111}\bra{111})\\
- &+ 2 \cdot (\ket{010}\bra{010} - \ket{011}\bra{011} - \ket{110}\bra{110} + \ket{111}\bra{111})\\
- &+ 3 \cdot (-\ket{000}\bra{000} + \ket{001}\bra{001} + \ket{100}\bra{100} - \ket{101}\bra{101})\\
- &+ 4 \cdot (-\ket{000}\bra{000} + \ket{001}\bra{001} - \ket{100}\bra{100} + \ket{101}\bra{101})\\
+M &= 1 \cdot \frac{1}{\sqrt{2}} (\ket{010}\bra{010} - \ket{011}\bra{011} + \ket{110}\bra{110} - \ket{111}\bra{111})\\
+ &+ 2 \cdot\frac{1}{\sqrt{2}} (\ket{010}\bra{010} - \ket{011}\bra{011} - \ket{110}\bra{110} + \ket{111}\bra{111})\\
+ &+ 3 \cdot \frac{1}{\sqrt{2}}(-\ket{000}\bra{000} + \ket{001}\bra{001} + \ket{100}\bra{100} - \ket{101}\bra{101})\\
+ &+ 4 \cdot \frac{1}{\sqrt{2}}(-\ket{000}\bra{000} + \ket{001}\bra{001} - \ket{100}\bra{100} + \ket{101}\bra{101})\\
 \end{aligned}
 $$
 
@@ -264,6 +266,22 @@ Eigenvalue & Eigenspace & Dimension \\
 \end{array}
 $$
 
+Measurement probabilities:
+
+$$
+\begin{aligned}
+P_m[\ket{\psi} \to 1] &= | \braket{\textbf2|{\psi}} |^2 + | \braket{\textbf3|{\psi}} |^2 + | \braket{\textbf6|{\psi}} |^2 + | \braket{\textbf7|{\psi}} |^2\\
+&= | \frac{i}{\sqrt{2}\sqrt{2}} (\braket{\textbf2|\textbf2} - \braket{\textbf2|\textbf5}) |^2 + 0 + 0 + 0\\
+&= \frac{1}{4}\\
+P_m[\ket{\psi} \to 2] &= | \braket{\textbf2|{\psi}} |^2 + | \braket{\textbf3|{\psi}} |^2 + | \braket{\textbf6|{\psi}} |^2 + | \braket{\textbf7|{\psi}} |^2\\
+&= \frac{1}{4}\\
+P_m[\ket{\psi} \to 3] &= | \braket{\textbf0|{\psi}} |^2 + | \braket{\textbf1|{\psi}} |^2 + | \braket{\textbf4|{\psi}} |^2 + | \braket{\textbf5|{\psi}} |^2\\
+&=  0 + 0 + 0 + | \frac{i}{\sqrt{2}\sqrt{2}} (\braket{\textbf5|\textbf2} - \braket{\textbf5|\textbf5}) |^2\\
+&= \frac{1}{4}\\
+P_m[\ket{\psi} \to 4] &= | \braket{\textbf0|{\psi}} |^2 + | \braket{\textbf1|{\psi}} |^2 + | \braket{\textbf4|{\psi}} |^2 + | \braket{\textbf5|{\psi}} |^2\\
+&= \frac{1}{4}\\
+\end{aligned}
+$$
 
 
 
