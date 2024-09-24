@@ -240,6 +240,33 @@ $$
 
 ### Task 3
 
+$$
+\begin{aligned}
+M &= I \otimes (Swap \cdot CX \cdot Swap) \cdot (H \otimes Y \otimes I)\\
+M &= 1 \cdot (\ket{010}\bra{010} - \ket{011}\bra{011} + \ket{110}\bra{110} - \ket{111}\bra{111})\\
+ &+ 2 \cdot (\ket{010}\bra{010} - \ket{011}\bra{011} - \ket{110}\bra{110} + \ket{111}\bra{111})\\
+ &+ 3 \cdot (-\ket{000}\bra{000} + \ket{001}\bra{001} + \ket{100}\bra{100} - \ket{101}\bra{101})\\
+ &+ 4 \cdot (-\ket{000}\bra{000} + \ket{001}\bra{001} - \ket{100}\bra{100} + \ket{101}\bra{101})\\
+\end{aligned}
+$$
+
+
+Eigenspaces:
+
+$$
+\begin{array}{rr}
+Eigenvalue & Eigenspace & Dimension \\
+\hline \lambda_1 = 1 & \{\frac{i}{\sqrt{2}} (\ket{\textbf{2}} - \ket{\textbf{3}} + \ket{\textbf{6}} -\ket{\textbf{7}})\} & 4 \\
+ \lambda_2 = 2 &  \{\frac{i}{\sqrt{2}} (\ket{\textbf{2}} - \ket{\textbf{3}} - \ket{\textbf{6}} +\ket{\textbf{7}})\} & 4 \\
+ \lambda_3 = 3 &  \{\frac{i}{\sqrt{2}} (-\ket{\textbf{0}} + \ket{\textbf{1}} + \ket{\textbf{4}} -\ket{\textbf{5}})\} & 4 \\
+ \lambda_4 = 4 &  \{\frac{i}{\sqrt{2}} (-\ket{\textbf{0}} + \ket{\textbf{1}} - \ket{\textbf{4}} +\ket{\textbf{5}})\} & 4 \\
+  
+\end{array}
+$$
+
+
+
+
 ### Task 4
 
 ### Task 5
