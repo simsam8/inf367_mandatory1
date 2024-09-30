@@ -262,7 +262,6 @@ Eigenvalue & Eigenspace & Dimension \\
  \lambda_2 = 2 &  \{\frac{i}{\sqrt{2}} (\ket{\textbf{2}} - \ket{\textbf{3}} - \ket{\textbf{6}} +\ket{\textbf{7}})\} & 4 \\
  \lambda_3 = 3 &  \{\frac{i}{\sqrt{2}} (-\ket{\textbf{0}} + \ket{\textbf{1}} + \ket{\textbf{4}} -\ket{\textbf{5}})\} & 4 \\
  \lambda_4 = 4 &  \{\frac{i}{\sqrt{2}} (-\ket{\textbf{0}} + \ket{\textbf{1}} - \ket{\textbf{4}} +\ket{\textbf{5}})\} & 4 \\
-  
 \end{array}
 $$
 
@@ -288,6 +287,56 @@ $$
 ### Task 4
 
 ### Task 5
+
+Eigenstate:
+
+$$
+\begin{array}{rr}
+Eigenvalue & Eigenspace & Dimension \\
+\hline \lambda_1 = 1 & \{\frac{1}{2} (\ket{L\Phi^+} + \ket{R\Phi^+})  \} & 2 \\
+ \lambda_2 = 2 &  \{\frac{1}{2} (\ket{L\Phi^-} + \ket{R\Phi^-})  \} & 2 \\
+ \lambda_3 = 3 &  \{\frac{1}{2} (\ket{L\Psi^+} + \ket{R\Psi^+})  \} & 2 \\
+ \lambda_4 = 4 &  \{\frac{1}{2} (\ket{L\Psi^-} + \ket{R\Psi^-})  \} & 2 \\
+\end{array}
+$$
+
+$$
+\ket{\psi} =\frac{1}{\sqrt{2}}(\ket{010} - \ket{101})=\ket{\textbf2}-\ket{\textbf5}\\
+\ket{L\Phi^+} = \frac{1}{2}\begin{bmatrix} 1\\\\\\1\\-i\\\\\\-i \end{bmatrix}
+\ket{R\Phi^+} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\1\\i\\\\\\i \end{bmatrix}
+\ket{L\Phi^-} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\-1\\-i\\\\\\i \end{bmatrix}
+\ket{R\Phi^-} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\-1\\i\\\\\\-i \end{bmatrix}\\
+\ket{L\Psi^+} =\frac{1}{{2}}\begin{bmatrix} \\1\\1\\\\-i\\\\\\-i \end{bmatrix}
+\ket{R\Psi^-} =\frac{1}{{2}}\begin{bmatrix} \\1\\-1\\\\\\-i\\i\\\\ \end{bmatrix}
+\ket{L\Psi^-} =\frac{1}{{2}}\begin{bmatrix} \\1\\1\\\\\\i\\i\\\\ \end{bmatrix}
+\ket{R\Psi^-} =\frac{1}{2}\begin{bmatrix} \\1\\-1\\\\\\i\\-i\\\\ \end{bmatrix}
+$$
+Measurement probabilities:
+
+$$
+\begin{aligned}
+P_m[\ket{\psi} \to 1] &= | \braket{\textbf0|{\psi}} |^2 + | \braket{\textbf3|{\psi}} |^2 - i | \braket{\textbf4|{\psi}} |^2 -i | \braket{\textbf7|{\psi}} |^2\\
+&+ | \braket{\textbf0|{\psi}} |^2 + | \braket{\textbf3|{\psi}} |^2 + i | \braket{\textbf4|{\psi}} |^2 + i | \braket{\textbf7|{\psi}} |^2\\
+&= 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0\\
+&= 0\\
+P_m[\ket{\psi} \to 2] &= | \braket{\textbf0|{\psi}} |^2 - | \braket{\textbf3|{\psi}} |^2 - i | \braket{\textbf4|{\psi}} |^2 + i | \braket{\textbf7|{\psi}} |^2\\
+&+ | \braket{\textbf0|{\psi}} |^2 - | \braket{\textbf3|{\psi}} |^2 + i | \braket{\textbf4|{\psi}} |^2 - i| \braket{\textbf7|{\psi}} |^2\\
+&= 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0\\
+&= 0\\
+P_m[\ket{\psi} \to 3] &= | \braket{\textbf1|{\psi}} |^2 + | \braket{\textbf2|{\psi}} |^2 - i | \braket{\textbf5|{\psi}} |^2 - i | \braket{\textbf6|{\psi}} |^2\\
+&+ | \braket{\textbf1|{\psi}} |^2 + | \braket{\textbf2|{\psi}} |^2 + i | \braket{\textbf5|{\psi}} |^2 + i | \braket{\textbf6|{\psi}} |^2\\
+&=  0 + | \frac{1}{\sqrt{2}\sqrt{2}\sqrt{2}} (\braket{\textbf2|\textbf2} - \braket{\textbf2|\textbf5}) |^2 + | \frac{-i}{\sqrt{2}\sqrt{2}\sqrt{2}} (\braket{\textbf5|\textbf2} - \braket{\textbf5|\textbf5}) |^2 + 0\\
+&+  0 + | \frac{1}{\sqrt{2}\sqrt{2}\sqrt{2}} (\braket{\textbf2|\textbf2} - \braket{\textbf2|\textbf5}) |^2 + | \frac{i}{\sqrt{2}\sqrt{2}\sqrt{2}} (\braket{\textbf5|\textbf2} - \braket{\textbf5|\textbf5}) |^2 + 0\\
+&= \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8}\\
+&= \frac{1}{2}\\
+P_m[\ket{\psi} \to 4] &= | \braket{\textbf1|{\psi}} |^2 - | \braket{\textbf2|{\psi}} |^2 - i | \braket{\textbf5|{\psi}} |^2 + | \braket{\textbf6|{\psi}} |^2\\
+&+ | \braket{\textbf1|{\psi}} |^2 - | \braket{\textbf2|{\psi}} |^2 + i | \braket{\textbf5|{\psi}} |^2 - i | \braket{\textbf6|{\psi}} |^2\\
+&=  0 + | \frac{-1}{\sqrt{2}\sqrt{2}\sqrt{2}} (\braket{\textbf2|\textbf2} - \braket{\textbf2|\textbf5}) |^2 + | \frac{-i}{\sqrt{2}\sqrt{2}\sqrt{2}} (\braket{\textbf5|\textbf2} - \braket{\textbf5|\textbf5}) |^2 + 0\\
+&+  0 + | \frac{-1}{\sqrt{2}\sqrt{2}\sqrt{2}} (\braket{\textbf2|\textbf2} - \braket{\textbf2|\textbf5}) |^2 + | \frac{i}{\sqrt{2}\sqrt{2}\sqrt{2}} (\braket{\textbf5|\textbf2} - \braket{\textbf5|\textbf5}) |^2 + 0\\
+&= \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8}\\
+&= \frac{1}{2}\\
+\end{aligned}
+$$
 
 ### Task 6
 
