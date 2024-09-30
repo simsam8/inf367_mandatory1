@@ -126,6 +126,8 @@ $$
 
 ## Measurement Operators
 
+\newpage
+
 ### Task 1
 
 
@@ -190,6 +192,8 @@ U &= \qquad\left[\begin{array}{c c|c c|c c|c c}
 \end{aligned}\\
 $$
 
+\newpage
+
 ### Task 2
 
 $$
@@ -210,7 +214,7 @@ U\ket{000} &= \frac{1}{\sqrt2}
 \end{array}\right]
 \cdot
 \begin{bmatrix} 1\\\\\\\\\\\\\\\\ \end{bmatrix}\\
-&=\frac{1}{\sqrt2}\begin{bmatrix} \\\\ 1\\\\\\ -1\\\\\\ \end{bmatrix}
+&=\frac{1}{\sqrt2}\begin{bmatrix} 0\\0\\1\\0\\0\\-1\\0\\0\\ \end{bmatrix}
 =\frac{1}{\sqrt{2}}(\ket{010} - \ket{101})
 \end{aligned}\\
 $$
@@ -238,17 +242,30 @@ $$
 $$
 
 
+\newpage
+
 ### Task 3
 
 Defining the measurement operator $M$:
 
 $$
+\newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
-M &= I \otimes (Swap \cdot CX \cdot Swap) \cdot (H \otimes Y \otimes I)\\
-M &= 1 \cdot \frac{1}{\sqrt{2}} (\ket{010}\bra{010} - \ket{011}\bra{011} + \ket{110}\bra{110} - \ket{111}\bra{111})\\
- &+ 2 \cdot\frac{1}{\sqrt{2}} (\ket{010}\bra{010} - \ket{011}\bra{011} - \ket{110}\bra{110} + \ket{111}\bra{111})\\
- &+ 3 \cdot \frac{1}{\sqrt{2}}(-\ket{000}\bra{000} + \ket{001}\bra{001} + \ket{100}\bra{100} - \ket{101}\bra{101})\\
- &+ 4 \cdot \frac{1}{\sqrt{2}}(-\ket{000}\bra{000} + \ket{001}\bra{001} - \ket{100}\bra{100} + \ket{101}\bra{101})\\
+\ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{\f{2}} - \ket{\f{5}})\\
+U &= I \otimes (Swap \cdot CX \cdot Swap) \cdot (H \otimes Y \otimes I)\\
+ &= \frac{1}{\sqrt{2}} (\ket{\f{2}}\bra{\f{0}} + \ket{\f{6}}\bra{\f{0}} + \ket{\f{1}}\bra{\f{1}} + \ket{\f{5}}\bra{\f{1}}\\
+ &= -\ket{\f{0}}\bra{\f{2}} - \ket{\f{4}}\bra{\f{2}} - \ket{\f{3}}\bra{\f{3}} - \ket{\f{7}}\bra{\f{3}}\\
+ &= \ket{\f{2}}\bra{\f{4}} - \ket{\f{6}}\bra{\f{4}} + \ket{\f{1}}\bra{\f{5}} - \ket{\f{5}}\bra{\f{5}}\\
+ &= -\ket{\f{0}}\bra{\f{6}} + \ket{\f{4}}\bra{\f{6}} - \ket{\f{3}}\bra{\f{7}} + \ket{\f{7}}\bra{\f{7}})\\
+U\ket{\psi} &= \frac{1}{2}(-\ket{\f0}+\ket{\f1}-\ket{\f4}-\ket{\f5})\\
+M &= 1 \cdot \ket{\f0}\bra{\f0}\\
+ &+2 \cdot \ket{\f1}\bra{\f1}\\
+ &+3 \cdot \ket{\f2}\bra{\f2}\\
+ &+4 \cdot \ket{\f3}\bra{\f3}\\
+ &+5 \cdot \ket{\f4}\bra{\f4}\\
+ &+6 \cdot \ket{\f5}\bra{\f5}\\
+ &+7 \cdot \ket{\f6}\bra{\f6}\\
+ &+8 \cdot \ket{\f7}\bra{\f7}\\
 \end{aligned}
 $$
 
@@ -256,36 +273,85 @@ $$
 Eigenspaces:
 
 $$
-\begin{array}{rr}
-Eigenvalue & Eigenspace & Dimension \\
-\hline \lambda_1 = 1 & \{\frac{i}{\sqrt{2}} (\ket{\textbf{2}} - \ket{\textbf{3}} + \ket{\textbf{6}} -\ket{\textbf{7}})\} & 4 \\
- \lambda_2 = 2 &  \{\frac{i}{\sqrt{2}} (\ket{\textbf{2}} - \ket{\textbf{3}} - \ket{\textbf{6}} +\ket{\textbf{7}})\} & 4 \\
- \lambda_3 = 3 &  \{\frac{i}{\sqrt{2}} (-\ket{\textbf{0}} + \ket{\textbf{1}} + \ket{\textbf{4}} -\ket{\textbf{5}})\} & 4 \\
- \lambda_4 = 4 &  \{\frac{i}{\sqrt{2}} (-\ket{\textbf{0}} + \ket{\textbf{1}} - \ket{\textbf{4}} +\ket{\textbf{5}})\} & 4 \\
-  
+\newcommand{\f}[1]{\textbf{#1}}
+\begin{array}{rrr}
+Eigenvalue & Eigenspace & Dim \\
+\hline \lambda_1 = 1 & \{\ket{\f0}\} & 1 \\
+\lambda_2= 2 & \{\ket{\f1}\} & 1 \\
+\lambda_3 = 3 & \{\ket{\f2}\} & 1 \\
+\lambda_4 = 4 & \{\ket{\f3}\} & 1 \\
+\lambda_5 = 5 & \{\ket{\f4}\} & 1 \\
+\lambda_6 = 6 & \{\ket{\f5}\} & 1 \\
+\lambda_7 = 7 & \{\ket{\f6}\} & 1 \\
+\lambda_8 = 8 & \{\ket{\f7}\} & 1 \\
 \end{array}
 $$
 
 Measurement probabilities:
 
 $$
+\newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
-P_m[\ket{\psi} \to 1] &= | \braket{\textbf2|{\psi}} |^2 + | \braket{\textbf3|{\psi}} |^2 + | \braket{\textbf6|{\psi}} |^2 + | \braket{\textbf7|{\psi}} |^2\\
-&= | \frac{i}{\sqrt{2}\sqrt{2}} (\braket{\textbf2|\textbf2} - \braket{\textbf2|\textbf5}) |^2 + 0 + 0 + 0\\
-&= \frac{1}{4}\\
-P_m[\ket{\psi} \to 2] &= | \braket{\textbf2|{\psi}} |^2 + | \braket{\textbf3|{\psi}} |^2 + | \braket{\textbf6|{\psi}} |^2 + | \braket{\textbf7|{\psi}} |^2\\
-&= \frac{1}{4}\\
-P_m[\ket{\psi} \to 3] &= | \braket{\textbf0|{\psi}} |^2 + | \braket{\textbf1|{\psi}} |^2 + | \braket{\textbf4|{\psi}} |^2 + | \braket{\textbf5|{\psi}} |^2\\
-&=  0 + 0 + 0 + | \frac{i}{\sqrt{2}\sqrt{2}} (\braket{\textbf5|\textbf2} - \braket{\textbf5|\textbf5}) |^2\\
-&= \frac{1}{4}\\
-P_m[\ket{\psi} \to 4] &= | \braket{\textbf0|{\psi}} |^2 + | \braket{\textbf1|{\psi}} |^2 + | \braket{\textbf4|{\psi}} |^2 + | \braket{\textbf5|{\psi}} |^2\\
-&= \frac{1}{4}\\
+P_m[\ket{\psi} \to 1] &= | \braket{\f0|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f0|\f2} - \braket{\f0|\f5})|^2 = 0\\
+P_m[\ket{\psi} \to 2] &= | \braket{\f1|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f1|\f2} - \braket{\f1|\f5})|^2 = 0\\
+P_m[\ket{\psi} \to 3] &= | \braket{\f2|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f2|\f2} - \braket{\f2|\f5})|^2 = \frac{1}{2}\\
+P_m[\ket{\psi} \to 4] &= | \braket{\f3|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f3|\f2} - \braket{\f3|\f5})|^2 = 0\\
+P_m[\ket{\psi} \to 5] &= | \braket{\f4|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f4|\f2} - \braket{\f4|\f5})|^2 = 0\\
+P_m[\ket{\psi} \to 6] &= | \braket{\f5|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f5|\f2} - \braket{\f5|\f5})|^2 = \frac{1}{2}\\
+P_m[\ket{\psi} \to 7] &= | \braket{\f6|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f6|\f2} - \braket{\f6|\f5})|^2 = 0\\
+P_m[\ket{\psi} \to 8] &= | \braket{\f7|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f7|\f2} - \braket{\f7|\f5})|^2 = 0\\
 \end{aligned}
 $$
 
 
+\newpage
 
 ### Task 4
+
+Expectation value:
+
+$$
+\newcommand{\f}[1]{\textbf{#1}}
+\begin{aligned}
+\braket{M_{\psi}} &= \braket{\psi|M|\psi}\\
+&= \frac{1}{\sqrt{2}}(\bra{\f2} - \bra{\f5}
+)\\
+&\cdot (1 \cdot \ket{\f0}\bra{\f0} +2 \cdot \ket{\f1}\bra{\f1} +3 \cdot \ket{\f2}\bra{\f2} +4 \cdot \ket{\f3}\bra{\f3}\\
+ &+5 \cdot \ket{\f4}\bra{\f4} +6 \cdot \ket{\f5}\bra{\f5} +7 \cdot \ket{\f6}\bra{\f6} +8 \cdot \ket{\f7}\bra{\f7})\\
+&\cdot \frac{1}{\sqrt{2}}(\ket{\f2} - \ket{\f5})\\
+&=\frac{1}{2}(3\bra{\f2}-6\bra{\f5}) \cdot (\ket{\f2}-\ket{\f5})\\
+&=\frac{1}{2}(3+6) = 9/2 = 4.5
+\end{aligned}
+$$
+
+
+Posterior states
+
+for $\lambda_3$:
+
+$$
+\newcommand{\f}[1]{\textbf{#1}}
+\begin{aligned}
+\frac{\ket{\f2}\braket{\f{2}|\psi}}{||\ket{\f2}\braket{\f{2}|\psi}||} &= 
+\frac{\frac{1}{\sqrt{2}}(\ket{\f2}\braket{\f{2}|\f2}-\ket{\f2}\braket{\f{2}|\f5})}
+{||\frac{1}{\sqrt{2}}(\ket{\f2}\braket{\f{2}|\f2}-\ket{\f2}\braket{\f{2}|\f5})||}\\
+&= \frac{\frac{1}{\sqrt{2}}\ket{\f2}}{||\frac{1}{\sqrt{2}}\ket{\f2}||} =
+\frac{\frac{1}{\sqrt{2}}\ket{\f2}}{\frac{1}{\sqrt{2}}} = \ket{\f2}
+\end{aligned}
+$$
+
+for $\lambda_6$:
+
+$$
+\newcommand{\f}[1]{\textbf{#1}}
+\begin{aligned}
+\frac{\ket{\f5}\braket{\f{5}|\psi}}{||\ket{\f5}\braket{\f{5}|\psi}||} &= 
+\frac{\frac{1}{\sqrt{2}}(\ket{\f5}\braket{\f{5}|\f2}-\ket{\f5}\braket{\f{5}|\f5})}
+{||\frac{1}{\sqrt{2}}(\ket{\f5}\braket{\f{5}|\f2}-\ket{\f5}\braket{\f{5}|\f5})||}\\
+&= \frac{-\frac{1}{\sqrt{2}}\ket{\f5}}{||-\frac{1}{\sqrt{2}}\ket{\f5}||} =
+\frac{-\frac{1}{\sqrt{2}}\ket{\f5}}{\frac{1}{\sqrt{2}}} = -\ket{\f5} = \ket{\f5}
+\end{aligned}
+$$
 
 ### Task 5
 
