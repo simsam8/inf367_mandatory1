@@ -1,4 +1,5 @@
 ---
+numbersections: true
 header-includes:
 - \usepackage{braket}
 - \usepackage{graphicx}
@@ -6,9 +7,9 @@ header-includes:
 
 # Coding part
 
-Can be found in [notebook](./Quantum2024_MandatoryI_Coding.ipynb)
+Can be found in __[notebook](./Quantum2024_MandatoryI_Coding.ipynb)__
 
-# Mandatory Tasks
+# Manual Tasks
 
 ## Quantum States and Quantum Gates 
 
@@ -128,7 +129,7 @@ $$
 
 \newpage
 
-### Task 1
+### Express the first part of the circuit as one unitary operator U
 
 
 $$
@@ -194,7 +195,7 @@ $$
 
 \newpage
 
-### Task 2
+### Compute the quantum state at the barrier and check for entanglement
 
 $$
 \begin{aligned}\\
@@ -244,7 +245,7 @@ $$
 
 \newpage
 
-### Task 3
+### Define a measurement operator M. List eigenspaces, dimensionalities and measurement probabilities
 
 Defining the measurement operator $M$:
 
@@ -306,7 +307,7 @@ $$
 
 \newpage
 
-### Task 4
+### Compute the expectation value and the posterior states
 
 Expectation value:
 
@@ -353,8 +354,8 @@ $$
 \end{aligned}
 $$
 
-### Task 5
+### Use the measurement operator $\hat{M}$. List eigenspaces, dimensionalities and measurement probabilities
 
-### Task 6
+### Compute the expectation value and the posterior states
 
-### Task 7
+### Realization of $\hat{M}$ on a quatum computer with only (partial) standard measurements
