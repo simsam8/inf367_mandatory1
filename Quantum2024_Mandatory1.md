@@ -410,7 +410,7 @@ $$
 
 ### Realization of $\hat{M}$ on a quantum computer with only (partial) standard measurements
 
-To realize $\hat{M}$ on a quantum computer with only standard measurements,
+To realize $\hat{M}$ on a quantum computer with only (partial) standard measurements,
 we need a unitary operator $U$ that maps the eigenspaces of $\hat{M}$ onto 
 the standard basis.
 
