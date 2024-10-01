@@ -3,6 +3,7 @@ numbersections: true
 header-includes:
 - \usepackage{braket}
 - \usepackage{graphicx}
+- \usepackage{qcircuit}
 ---
 
 # Coding part
@@ -407,4 +408,20 @@ $$
 
 ### Compute the expectation value and the posterior states
 
-### Realization of $\hat{M}$ on a quatum computer with only (partial) standard measurements
+### Realization of $\hat{M}$ on a quantum computer with only (partial) standard measurements
+
+To realize $\hat{M}$ on a quantum computer with only standard measurements,
+we need a unitary operator $U$ that maps the eigenspaces of $\hat{M}$ onto 
+the standard basis.
+
+$Eig(\hat{M}, \lambda_k) \overset{U}{\mapsto} Eig(M_{std}, \lambda_k)$
+
+After measuring and calculating the posterior states in $M_{std}$, 
+we then revert back by $U^{\dagger}$.
+
+$$
+\Qcircuit @C=1em @R=.7em {
+    & \multigate{1}{U} & \meter & \multigate{1}{U^\dag} & \qwa\\
+    & \ghost{U} & \qw & \ghost{U^\dag} & \qwa
+}
+$$
