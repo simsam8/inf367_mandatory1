@@ -358,7 +358,7 @@ $$
 Eigenstate:
 
 $$
-\begin{array}{rr}
+\begin{array}{rrr}
 Eigenvalue & Eigenspace & Dimension \\
 \hline \lambda_1 = 1 & \{\frac{1}{2} (\ket{L\Phi^+} + \ket{R\Phi^+})  \} & 2 \\
  \lambda_2 = 2 &  \{\frac{1}{2} (\ket{L\Phi^-} + \ket{R\Phi^-})  \} & 2 \\
