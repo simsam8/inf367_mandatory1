@@ -361,7 +361,7 @@ $$
 \pi_3 : \ket{\psi}= \frac{1}{{\sqrt{8}}} (\ket{\textbf2}+ \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})\\
 \pi_4 :\ket{\psi} = \frac{1}{{\sqrt{8}}} (-\ket{\textbf2}-\ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})\\
 \ket{\psi} \to \frac{\pi_3\ket{\psi}}{||\pi_3\ket{\psi}||}=\frac{\frac{1}{{\sqrt{8}}} (\ket{\textbf2} + \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\frac{\sqrt{4}}{\sqrt{8}}}=\frac{(\ket{\textbf2} + \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\sqrt{4}}=\frac{(2\cdot\ket{\textbf2})}{\sqrt{4}}=\ket{0}\otimes\ket{1}\otimes\ket{0}\\
-\ket{\psi} \to \frac{\pi_3\ket{\psi}}{||\pi_4\ket{\psi}||}=\frac{\frac{1}{{\sqrt{8}}} (-\ket{\textbf2}-\ket{\textbf2}+i\ket{\textbf5}-i\ket{\textbf5})}{\frac{\sqrt{4}}{\sqrt{8}}}=\frac{(-\ket{\textbf2} - \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\sqrt{4}}=\frac{(-2\cdot\ket{\textbf2})}{\sqrt{4}}=-(\ket{0}\otimes\ket{1}\otimes\ket{0})\\
+\ket{\psi} \to \frac{\pi_4\ket{\psi}}{||\pi_4\ket{\psi}||}=\frac{\frac{1}{{\sqrt{8}}} (-\ket{\textbf2}-\ket{\textbf2}+i\ket{\textbf5}-i\ket{\textbf5})}{\frac{\sqrt{4}}{\sqrt{8}}}=\frac{(-\ket{\textbf2} - \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\sqrt{4}}=\frac{(-2\cdot\ket{\textbf2})}{\sqrt{4}}=-(\ket{0}\otimes\ket{1}\otimes\ket{0})\\
 $$
 
 ### Task 7
