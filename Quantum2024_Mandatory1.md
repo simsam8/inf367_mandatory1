@@ -381,6 +381,17 @@ $$
 \ket{R\Psi^-} =\frac{1}{2}\begin{bmatrix} \\1\\-1\\\\\\i\\-i\\\\ \end{bmatrix}
 \end{aligned}
 $$
+
+
+$$
+\begin{aligned}
+M &= 1\cdot(\ket{0}+\ket{3}-i\ket{4}-i\ket{7} + \ket{0}+\ket{3}+i\ket{4}+i\ket{7})\\
+&+ 2\cdot(\ket{0}-\ket{3}-i\ket{4}+i\ket{7} + \ket{0}-\ket{3}+i\ket{4}-i\ket{7})\\
+&+ 3\cdot(\ket{1}+\ket{2}-i\ket{5}-i\ket{6} + \ket{1}+\ket{2}+i\ket{5}+i\ket{6})\\
+&+ 4\cdot(\ket{1}-\ket{2}-i\ket{5}+i\ket{6} + \ket{1}-\ket{2}+i\ket{5}-i\ket{6})
+\end{aligned}
+$$
+
 Measurement probabilities:
 
 $$
@@ -415,7 +426,12 @@ $\braket{M}_\psi=0\cdot1+0\cdot2+\frac{1}{2}\cdot3+\frac{1}{2}\cdot4=7/2=3.5$
 
 Posterior states:
 $$
-\pi_3 = \frac{1}{{8}} (\ket{1} \bra{1}+\ket{2} \bra{2}+\ket{5} \bra{5}+\ket{7} \bra{7})
+\pi_3  = \ket{\textbf1} \bra{\textbf1}+\ket{\textbf2} \bra{\textbf2}+i\ket{\textbf5} \bra{\textbf5}+i\ket{\textbf6} \bra{\textbf6}+\ket{\textbf1} \bra{\textbf1}+\ket{\textbf2} \bra{\textbf2}-i\ket{\textbf5} \bra{\textbf5}-i\ket{\textbf6} \bra{\textbf6}\\
+\pi_4 = \ket{\textbf1} \bra{\textbf1}-\ket{\textbf2} \bra{\textbf2}-i\ket{\textbf5} \bra{\textbf5}+i\ket{\textbf6} \bra{\textbf6}+\ket{\textbf1} \bra{\textbf1}-\ket{\textbf2} \bra{\textbf2}+i\ket{\textbf5} \bra{\textbf5}-i\ket{\textbf6} \bra{\textbf6}\\
+\pi_3 : \ket{\psi}= \frac{1}{{\sqrt{8}}} (\ket{\textbf2}+ \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})\\
+\pi_4 :\ket{\psi} = \frac{1}{{\sqrt{8}}} (-\ket{\textbf2}-\ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})\\
+\ket{\psi} \to \frac{\pi_3\ket{\psi}}{||\pi_3\ket{\psi}||}=\frac{\frac{1}{{\sqrt{8}}} (\ket{\textbf2} + \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\frac{\sqrt{4}}{\sqrt{8}}}=\frac{(\ket{\textbf2} + \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\sqrt{4}}=\frac{(2\cdot\ket{\textbf2})}{\sqrt{4}}=\ket{0}\otimes\ket{1}\otimes\ket{0}\\
+\ket{\psi} \to \frac{\pi_4\ket{\psi}}{||\pi_4\ket{\psi}||}=\frac{\frac{1}{{\sqrt{8}}} (-\ket{\textbf2}-\ket{\textbf2}+i\ket{\textbf5}-i\ket{\textbf5})}{\frac{\sqrt{4}}{\sqrt{8}}}=\frac{(-\ket{\textbf2} - \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\sqrt{4}}=\frac{(-2\cdot\ket{\textbf2})}{\sqrt{4}}=-(\ket{0}\otimes\ket{1}\otimes\ket{0})\\
 $$
 
 ### Realization of $\hat{M}$ on a quantum computer with only (partial) standard measurements
