@@ -126,9 +126,9 @@ $$
 
 
 
-## Measurement Operators
-
 \newpage
+
+## Measurement Operators
 
 ### Express the first part of the circuit as one unitary operator U
 
@@ -254,20 +254,35 @@ $$
 \newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
 \ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{\f{2}} - \ket{\f{5}})\\
-U &= I \otimes (Swap \cdot CX \cdot Swap) \cdot (H \otimes Y \otimes I)\\
- &= \frac{1}{\sqrt{2}} (\ket{\f{2}}\bra{\f{0}} + \ket{\f{6}}\bra{\f{0}} + \ket{\f{1}}\bra{\f{1}} + \ket{\f{5}}\bra{\f{1}}\\
- &= -\ket{\f{0}}\bra{\f{2}} - \ket{\f{4}}\bra{\f{2}} - \ket{\f{3}}\bra{\f{3}} - \ket{\f{7}}\bra{\f{3}}\\
- &= \ket{\f{2}}\bra{\f{4}} - \ket{\f{6}}\bra{\f{4}} + \ket{\f{1}}\bra{\f{5}} - \ket{\f{5}}\bra{\f{5}}\\
- &= -\ket{\f{0}}\bra{\f{6}} + \ket{\f{4}}\bra{\f{6}} - \ket{\f{3}}\bra{\f{7}} + \ket{\f{7}}\bra{\f{7}})\\
-U\ket{\psi} &= \frac{1}{2}(-\ket{\f0}+\ket{\f1}-\ket{\f4}-\ket{\f5})\\
-M &= 1 \cdot \ket{\f0}\bra{\f0}\\
- &+2 \cdot \ket{\f1}\bra{\f1}\\
- &+3 \cdot \ket{\f2}\bra{\f2}\\
- &+4 \cdot \ket{\f3}\bra{\f3}\\
- &+5 \cdot \ket{\f4}\bra{\f4}\\
- &+6 \cdot \ket{\f5}\bra{\f5}\\
- &+7 \cdot \ket{\f6}\bra{\f6}\\
- &+8 \cdot \ket{\f7}\bra{\f7}\\
+U^\dag &=  (H \otimes Y \otimes I) \cdot (I \otimes (Swap \cdot CX \cdot Swap))\\
+ &= \frac{i}{\sqrt{2}} (\ket{\f{2}}\bra{\f{0}} + \ket{\f{6}}\bra{\f{0}} - \ket{\f{1}}\bra{\f{1}} - \ket{\f{5}}\bra{\f{1}}\\
+ &-\ket{\f{0}}\bra{\f{2}} - \ket{\f{4}}\bra{\f{2}} + \ket{\f{3}}\bra{\f{3}} + \ket{\f{7}}\bra{\f{3}}\\
+ &+ \ket{\f{2}}\bra{\f{4}} - \ket{\f{6}}\bra{\f{4}} - \ket{\f{1}}\bra{\f{5}} + \ket{\f{5}}\bra{\f{5}}\\
+ &-\ket{\f{0}}\bra{\f{6}} + \ket{\f{4}}\bra{\f{6}} + \ket{\f{3}}\bra{\f{7}} - \ket{\f{7}}\bra{\f{7}})\\
+\end{aligned}
+$$
+
+Map the standard basis with $U^\dag$:
+
+$$
+\newcommand{\f}[1]{\textbf{#1}}
+\begin{aligned}
+U^\dag \ket{\f0} &= \frac{i}{\sqrt{2}}(\ket{\f2} + \ket{\f6}) = \frac{i}{\sqrt{2}}\ket{+10} = \ket{+10}\\
+U^\dag \ket{\f1} &= \frac{i}{\sqrt{2}}(-\ket{\f1} - \ket{\f5}) = -\frac{i}{\sqrt{2}}\ket{+01} = \ket{+01}\\
+U^\dag \ket{\f2} &= \frac{i}{\sqrt{2}}(-\ket{\f0} - \ket{\f4}) = -\frac{i}{\sqrt{2}}\ket{+00} = \ket{+00}\\
+U^\dag \ket{\f3} &= \frac{i}{\sqrt{2}}(\ket{\f3} + \ket{\f7}) = \frac{i}{\sqrt{2}}\ket{+11} = \ket{+11}\\
+U^\dag \ket{\f4} &= \frac{i}{\sqrt{2}}(\ket{\f2} - \ket{\f6}) = \frac{i}{\sqrt{2}}\ket{-10} = \ket{-10}\\
+U^\dag \ket{\f5} &= \frac{i}{\sqrt{2}}(-\ket{\f1} + \ket{\f5}) = -\frac{i}{\sqrt{2}}\ket{-01} = \ket{-01}\\
+U^\dag \ket{\f6} &= \frac{i}{\sqrt{2}}(-\ket{\f0} + \ket{\f4}) = -\frac{i}{\sqrt{2}}\ket{-00} = \ket{-00}\\
+U^\dag \ket{\f7} &= \frac{i}{\sqrt{2}}(\ket{\f3} - \ket{\f7}) = \frac{i}{\sqrt{2}}\ket{-11} = \ket{-11}\\
+M &= 1 \cdot \ket{+00}\bra{+00}\\
+ &+1 \cdot \ket{+01}\bra{+01}\\
+ &+2 \cdot \ket{+10}\bra{+10}\\
+ &+2 \cdot \ket{+11}\bra{+11}\\
+ &+3 \cdot \ket{-00}\bra{-00}\\
+ &+3 \cdot \ket{-01}\bra{-01}\\
+ &+4 \cdot \ket{-10}\bra{-10}\\
+ &+4 \cdot \ket{-11}\bra{-11}\\
 \end{aligned}
 $$
 
@@ -278,14 +293,10 @@ $$
 \newcommand{\f}[1]{\textbf{#1}}
 \begin{array}{rrr}
 Eigenvalue & Eigenspace & Dim \\
-\hline \lambda_1 = 1 & \{\ket{\f0}\} & 1 \\
-\lambda_2= 2 & \{\ket{\f1}\} & 1 \\
-\lambda_3 = 3 & \{\ket{\f2}\} & 1 \\
-\lambda_4 = 4 & \{\ket{\f3}\} & 1 \\
-\lambda_5 = 5 & \{\ket{\f4}\} & 1 \\
-\lambda_6 = 6 & \{\ket{\f5}\} & 1 \\
-\lambda_7 = 7 & \{\ket{\f6}\} & 1 \\
-\lambda_8 = 8 & \{\ket{\f7}\} & 1 \\
+\hline \lambda_1 = 1 & \{\ket{+00}, \ket{+01}\} & 2 \\
+ \lambda_2 = 2 & \{\ket{+10}, \ket{+11}\} & 2 \\
+ \lambda_3 = 3 & \{\ket{-00}, \ket{-01}\} & 2 \\
+ \lambda_4 = 4 & \{\ket{-10}, \ket{-11}\} & 2 \\
 \end{array}
 $$
 
@@ -294,14 +305,12 @@ Measurement probabilities:
 $$
 \newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
-P_m[\ket{\psi} \to 1] &= | \braket{\f0|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f0|\f2} - \braket{\f0|\f5})|^2 = 0\\
-P_m[\ket{\psi} \to 2] &= | \braket{\f1|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f1|\f2} - \braket{\f1|\f5})|^2 = 0\\
-P_m[\ket{\psi} \to 3] &= | \braket{\f2|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f2|\f2} - \braket{\f2|\f5})|^2 = \frac{1}{2}\\
-P_m[\ket{\psi} \to 4] &= | \braket{\f3|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f3|\f2} - \braket{\f3|\f5})|^2 = 0\\
-P_m[\ket{\psi} \to 5] &= | \braket{\f4|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f4|\f2} - \braket{\f4|\f5})|^2 = 0\\
-P_m[\ket{\psi} \to 6] &= | \braket{\f5|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f5|\f2} - \braket{\f5|\f5})|^2 = \frac{1}{2}\\
-P_m[\ket{\psi} \to 7] &= | \braket{\f6|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f6|\f2} - \braket{\f6|\f5})|^2 = 0\\
-P_m[\ket{\psi} \to 8] &= | \braket{\f7|{\psi}} |^2 = | \frac{1}{\sqrt{2}} (\braket{\f7|\f2} - \braket{\f7|\f5})|^2 = 0\\
+\ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{\f{2}} - \ket{\f{5}})\\
+\ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{010} - \ket{101}) = \frac{1}{2}(\ket{+10}+\ket{-10} - \ket{-01}-\ket{+01})\\
+P_m[\ket{\psi} \to 1] &= | \braket{+00|{\psi}} |^2 + | \braket{+01|{\psi}} |^2= |-\frac{1}{2}\braket{+01|+01}|^2 = \frac{1}{4}\\
+P_m[\ket{\psi} \to 2] &= | \braket{+10|{\psi}} |^2 + | \braket{+11|{\psi}} |^2= |\frac{1}{2}\braket{+10|+10}|^2 = \frac{1}{4} \\
+P_m[\ket{\psi} \to 3] &= | \braket{-00|{\psi}} |^2 + | \braket{-01|{\psi}} |^2= |-\frac{1}{2}\braket{-01|-01})|^2 = \frac{1}{4}\\
+P_m[\ket{\psi} \to 4] &= | \braket{-10|{\psi}} |^2 + | \braket{-11|{\psi}} |^2= |\frac{1}{2}\braket{-10|-10})|^2 = \frac{1}{4}\\
 \end{aligned}
 $$
 
@@ -315,44 +324,60 @@ Expectation value:
 $$
 \newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
-\braket{M_{\psi}} &= \braket{\psi|M|\psi}\\
-&= \frac{1}{\sqrt{2}}(\bra{\f2} - \bra{\f5}
-)\\
-&\cdot (1 \cdot \ket{\f0}\bra{\f0} +2 \cdot \ket{\f1}\bra{\f1} +3 \cdot \ket{\f2}\bra{\f2} +4 \cdot \ket{\f3}\bra{\f3}\\
- &+5 \cdot \ket{\f4}\bra{\f4} +6 \cdot \ket{\f5}\bra{\f5} +7 \cdot \ket{\f6}\bra{\f6} +8 \cdot \ket{\f7}\bra{\f7})\\
-&\cdot \frac{1}{\sqrt{2}}(\ket{\f2} - \ket{\f5})\\
-&=\frac{1}{2}(3\bra{\f2}-6\bra{\f5}) \cdot (\ket{\f2}-\ket{\f5})\\
-&=\frac{1}{2}(3+6) = 9/2 = 4.5
+\braket{M_{\psi}} &= 1\cdot\frac{1}{4}+2\cdot\frac{1}{4}+3\cdot\frac{1}{4}+4\cdot\frac{1}{4}\\
+&=\frac{10}{4}=2.5
 \end{aligned}
 $$
 
 Posterior states:
 
+$\ket{\psi} = \frac{1}{2}(\ket{+10}+\ket{-10} - \ket{-01}-\ket{+01})$
+
+for $\lambda_1$:
+
+$$
+\begin{aligned}
+\pi_{1} &= \ket{+00}\bra{+00} + \ket{+01}\bra{+01}\\ 
+\ket{\phi}_{\lambda_1} &= \frac{\pi_1\ket{\psi}}{||\pi_1 \ket{\psi}||}\\
+&=\frac{-\frac{1}{2}\ket{+01}}{||\frac{1}{2}\ket{+01}||} = \frac{-\frac{1}{2}\ket{+01}}{\frac{1}{2}}\\
+&=\ket{+01}\\
+\end{aligned}
+$$
+
+for $\lambda_2$:
+
+$$
+\begin{aligned}
+\pi_{2} &= \ket{+10}\bra{+10} + \ket{+11}\bra{+11}\\ 
+\ket{\phi}_{\lambda_2} &= \frac{\pi_2\ket{\psi}}{||\pi_2 \ket{\psi}||}\\
+&=\frac{\frac{1}{2}\ket{+10}}{||\frac{1}{2}\ket{+10}||} = \frac{\frac{1}{2}\ket{+10}}{\frac{1}{2}}\\
+&=\ket{+10}\\
+\end{aligned}
+$$
+
 for $\lambda_3$:
 
 $$
-\newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
-\frac{\ket{\f2}\braket{\f{2}|\psi}}{||\ket{\f2}\braket{\f{2}|\psi}||} &= 
-\frac{\frac{1}{\sqrt{2}}(\ket{\f2}\braket{\f{2}|\f2}-\ket{\f2}\braket{\f{2}|\f5})}
-{||\frac{1}{\sqrt{2}}(\ket{\f2}\braket{\f{2}|\f2}-\ket{\f2}\braket{\f{2}|\f5})||}\\
-&= \frac{\frac{1}{\sqrt{2}}\ket{\f2}}{||\frac{1}{\sqrt{2}}\ket{\f2}||} =
-\frac{\frac{1}{\sqrt{2}}\ket{\f2}}{\frac{1}{\sqrt{2}}} = \ket{\f2}
+\pi_{3} &= \ket{-00}\bra{-00} + \ket{-01}\bra{-01}\\ 
+\ket{\phi}_{\lambda_3} &= \frac{\pi_3\ket{\psi}}{||\pi_3 \ket{\psi}||}\\
+&=\frac{-\frac{1}{2}\ket{-01}}{||\frac{1}{2}\ket{-01}||} = \frac{-\frac{1}{2}\ket{-01}}{\frac{1}{2}}\\
+&=\ket{-01}\\
 \end{aligned}
 $$
 
-for $\lambda_6$:
+for $\lambda_4$:
 
 $$
-\newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
-\frac{\ket{\f5}\braket{\f{5}|\psi}}{||\ket{\f5}\braket{\f{5}|\psi}||} &= 
-\frac{\frac{1}{\sqrt{2}}(\ket{\f5}\braket{\f{5}|\f2}-\ket{\f5}\braket{\f{5}|\f5})}
-{||\frac{1}{\sqrt{2}}(\ket{\f5}\braket{\f{5}|\f2}-\ket{\f5}\braket{\f{5}|\f5})||}\\
-&= \frac{-\frac{1}{\sqrt{2}}\ket{\f5}}{||-\frac{1}{\sqrt{2}}\ket{\f5}||} =
-\frac{-\frac{1}{\sqrt{2}}\ket{\f5}}{\frac{1}{\sqrt{2}}} = -\ket{\f5} = \ket{\f5}
+\pi_{4} &= \ket{-10}\bra{-10} + \ket{-11}\bra{-11}\\ 
+\ket{\phi}_{\lambda_4} &= \frac{\pi_4\ket{\psi}}{||\pi_4 \ket{\psi}||}\\
+&=\frac{\frac{1}{2}\ket{-10}}{||\frac{1}{2}\ket{-10}||} = \frac{\frac{1}{2}\ket{-10}}{\frac{1}{2}}\\
+&=\ket{-10}\\
 \end{aligned}
 $$
+
+\newpage
 
 ### Use the measurement operator $\hat{M}$. List eigenspaces, dimensionalities and measurement probabilities
 
@@ -418,6 +443,8 @@ P_m[\ket{\psi} \to 4] &= | \braket{\textbf1|{\psi}} |^2 + |- \braket{\textbf2|{\
 &= \frac{1}{2}\\
 \end{aligned}
 $$
+
+\newpage
 
 ### Compute the expectation value and the posterior states
 
