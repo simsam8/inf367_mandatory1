@@ -1,14 +1,16 @@
 ---
+numbersections: true
 header-includes:
 - \usepackage{braket}
 - \usepackage{graphicx}
+- \usepackage{qcircuit}
 ---
 
 # Coding part
 
-Can be found in [notebook](./Quantum2024_MandatoryI_Coding.ipynb)
+Can be found in __[notebook](./Quantum2024_MandatoryI_Coding.ipynb)__
 
-# Mandatory Tasks
+# Manual Tasks
 
 ## Quantum States and Quantum Gates 
 
@@ -124,9 +126,11 @@ $$
 
 
 
+\newpage
+
 ## Measurement Operators
 
-### Task 1
+### Express the first part of the circuit as one unitary operator U
 
 
 $$
@@ -190,7 +194,9 @@ U &= \qquad\left[\begin{array}{c c|c c|c c|c c}
 \end{aligned}\\
 $$
 
-### Task 2
+\newpage
+
+### Compute the quantum state at the barrier and check for entanglement
 
 $$
 \begin{aligned}\\
@@ -210,7 +216,7 @@ U\ket{000} &= \frac{1}{\sqrt2}
 \end{array}\right]
 \cdot
 \begin{bmatrix} 1\\\\\\\\\\\\\\\\ \end{bmatrix}\\
-&=\frac{1}{\sqrt2}\begin{bmatrix} \\\\ 1\\\\\\ -1\\\\\\ \end{bmatrix}
+&=\frac{1}{\sqrt2}\begin{bmatrix} 0\\0\\1\\0\\0\\-1\\0\\0\\ \end{bmatrix}
 =\frac{1}{\sqrt{2}}(\ket{010} - \ket{101})
 \end{aligned}\\
 $$
@@ -238,17 +244,45 @@ $$
 $$
 
 
-### Task 3
+\newpage
+
+### Define a measurement operator M. List eigenspaces, dimensionalities and measurement probabilities
 
 Defining the measurement operator $M$:
 
 $$
+\newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
-M &= I \otimes (Swap \cdot CX \cdot Swap) \cdot (H \otimes Y \otimes I)\\
-M &= 1 \cdot \frac{1}{\sqrt{2}} (\ket{010}\bra{010} - \ket{011}\bra{011} + \ket{110}\bra{110} - \ket{111}\bra{111})\\
- &+ 2 \cdot\frac{1}{\sqrt{2}} (\ket{010}\bra{010} - \ket{011}\bra{011} - \ket{110}\bra{110} + \ket{111}\bra{111})\\
- &+ 3 \cdot \frac{1}{\sqrt{2}}(-\ket{000}\bra{000} + \ket{001}\bra{001} + \ket{100}\bra{100} - \ket{101}\bra{101})\\
- &+ 4 \cdot \frac{1}{\sqrt{2}}(-\ket{000}\bra{000} + \ket{001}\bra{001} - \ket{100}\bra{100} + \ket{101}\bra{101})\\
+\ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{\f{2}} - \ket{\f{5}})\\
+U^\dag &=  (H \otimes Y \otimes I) \cdot (I \otimes (Swap \cdot CX \cdot Swap))\\
+ &= \frac{i}{\sqrt{2}} (\ket{\f{2}}\bra{\f{0}} + \ket{\f{6}}\bra{\f{0}} - \ket{\f{1}}\bra{\f{1}} - \ket{\f{5}}\bra{\f{1}}\\
+ &-\ket{\f{0}}\bra{\f{2}} - \ket{\f{4}}\bra{\f{2}} + \ket{\f{3}}\bra{\f{3}} + \ket{\f{7}}\bra{\f{3}}\\
+ &+ \ket{\f{2}}\bra{\f{4}} - \ket{\f{6}}\bra{\f{4}} - \ket{\f{1}}\bra{\f{5}} + \ket{\f{5}}\bra{\f{5}}\\
+ &-\ket{\f{0}}\bra{\f{6}} + \ket{\f{4}}\bra{\f{6}} + \ket{\f{3}}\bra{\f{7}} - \ket{\f{7}}\bra{\f{7}})\\
+\end{aligned}
+$$
+
+Map the standard basis with $U^\dag$:
+
+$$
+\newcommand{\f}[1]{\textbf{#1}}
+\begin{aligned}
+U^\dag \ket{\f0} &= \frac{i}{\sqrt{2}}(\ket{\f2} + \ket{\f6}) = \frac{i}{\sqrt{2}}\ket{+10} = \ket{+10}\\
+U^\dag \ket{\f1} &= \frac{i}{\sqrt{2}}(-\ket{\f1} - \ket{\f5}) = -\frac{i}{\sqrt{2}}\ket{+01} = \ket{+01}\\
+U^\dag \ket{\f2} &= \frac{i}{\sqrt{2}}(-\ket{\f0} - \ket{\f4}) = -\frac{i}{\sqrt{2}}\ket{+00} = \ket{+00}\\
+U^\dag \ket{\f3} &= \frac{i}{\sqrt{2}}(\ket{\f3} + \ket{\f7}) = \frac{i}{\sqrt{2}}\ket{+11} = \ket{+11}\\
+U^\dag \ket{\f4} &= \frac{i}{\sqrt{2}}(\ket{\f2} - \ket{\f6}) = \frac{i}{\sqrt{2}}\ket{-10} = \ket{-10}\\
+U^\dag \ket{\f5} &= \frac{i}{\sqrt{2}}(-\ket{\f1} + \ket{\f5}) = -\frac{i}{\sqrt{2}}\ket{-01} = \ket{-01}\\
+U^\dag \ket{\f6} &= \frac{i}{\sqrt{2}}(-\ket{\f0} + \ket{\f4}) = -\frac{i}{\sqrt{2}}\ket{-00} = \ket{-00}\\
+U^\dag \ket{\f7} &= \frac{i}{\sqrt{2}}(\ket{\f3} - \ket{\f7}) = \frac{i}{\sqrt{2}}\ket{-11} = \ket{-11}\\
+M &= 1 \cdot \ket{+00}\bra{+00}\\
+ &+1 \cdot \ket{+01}\bra{+01}\\
+ &+2 \cdot \ket{+10}\bra{+10}\\
+ &+2 \cdot \ket{+11}\bra{+11}\\
+ &+3 \cdot \ket{-00}\bra{-00}\\
+ &+3 \cdot \ket{-01}\bra{-01}\\
+ &+4 \cdot \ket{-10}\bra{-10}\\
+ &+4 \cdot \ket{-11}\bra{-11}\\
 \end{aligned}
 $$
 
@@ -256,42 +290,101 @@ $$
 Eigenspaces:
 
 $$
-\begin{array}{rr}
-Eigenvalue & Eigenspace & Dimension \\
-\hline \lambda_1 = 1 & \{\frac{i}{\sqrt{2}} (\ket{\textbf{2}} - \ket{\textbf{3}} + \ket{\textbf{6}} -\ket{\textbf{7}})\} & 4 \\
- \lambda_2 = 2 &  \{\frac{i}{\sqrt{2}} (\ket{\textbf{2}} - \ket{\textbf{3}} - \ket{\textbf{6}} +\ket{\textbf{7}})\} & 4 \\
- \lambda_3 = 3 &  \{\frac{i}{\sqrt{2}} (-\ket{\textbf{0}} + \ket{\textbf{1}} + \ket{\textbf{4}} -\ket{\textbf{5}})\} & 4 \\
- \lambda_4 = 4 &  \{\frac{i}{\sqrt{2}} (-\ket{\textbf{0}} + \ket{\textbf{1}} - \ket{\textbf{4}} +\ket{\textbf{5}})\} & 4 \\
+\newcommand{\f}[1]{\textbf{#1}}
+\begin{array}{rrr}
+Eigenvalue & Eigenspace & Dim \\
+\hline \lambda_1 = 1 & \{\ket{+00}, \ket{+01}\} & 2 \\
+ \lambda_2 = 2 & \{\ket{+10}, \ket{+11}\} & 2 \\
+ \lambda_3 = 3 & \{\ket{-00}, \ket{-01}\} & 2 \\
+ \lambda_4 = 4 & \{\ket{-10}, \ket{-11}\} & 2 \\
 \end{array}
 $$
 
 Measurement probabilities:
 
 $$
+\newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
-P_m[\ket{\psi} \to 1] &= | \braket{\textbf2|{\psi}} |^2 + | \braket{\textbf3|{\psi}} |^2 + | \braket{\textbf6|{\psi}} |^2 + | \braket{\textbf7|{\psi}} |^2\\
-&= | \frac{i}{\sqrt{2}\sqrt{2}} (\braket{\textbf2|\textbf2} - \braket{\textbf2|\textbf5}) |^2 + 0 + 0 + 0\\
-&= \frac{1}{4}\\
-P_m[\ket{\psi} \to 2] &= | \braket{\textbf2|{\psi}} |^2 + | \braket{\textbf3|{\psi}} |^2 + | \braket{\textbf6|{\psi}} |^2 + | \braket{\textbf7|{\psi}} |^2\\
-&= \frac{1}{4}\\
-P_m[\ket{\psi} \to 3] &= | \braket{\textbf0|{\psi}} |^2 + | \braket{\textbf1|{\psi}} |^2 + | \braket{\textbf4|{\psi}} |^2 + | \braket{\textbf5|{\psi}} |^2\\
-&=  0 + 0 + 0 + | \frac{i}{\sqrt{2}\sqrt{2}} (\braket{\textbf5|\textbf2} - \braket{\textbf5|\textbf5}) |^2\\
-&= \frac{1}{4}\\
-P_m[\ket{\psi} \to 4] &= | \braket{\textbf0|{\psi}} |^2 + | \braket{\textbf1|{\psi}} |^2 + | \braket{\textbf4|{\psi}} |^2 + | \braket{\textbf5|{\psi}} |^2\\
-&= \frac{1}{4}\\
+\ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{\f{2}} - \ket{\f{5}})\\
+\ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{010} - \ket{101}) = \frac{1}{2}(\ket{+10}+\ket{-10} + \ket{-01}-\ket{+01})\\
+P_m[\ket{\psi} \to 1] &= | \braket{+00|{\psi}} |^2 + | \braket{+01|{\psi}} |^2= |-\frac{1}{2}\braket{+01|+01}|^2 = \frac{1}{4}\\
+P_m[\ket{\psi} \to 2] &= | \braket{+10|{\psi}} |^2 + | \braket{+11|{\psi}} |^2= |\frac{1}{2}\braket{+10|+10}|^2 = \frac{1}{4} \\
+P_m[\ket{\psi} \to 3] &= | \braket{-00|{\psi}} |^2 + | \braket{-01|{\psi}} |^2= |\frac{1}{2}\braket{-01|-01})|^2 = \frac{1}{4}\\
+P_m[\ket{\psi} \to 4] &= | \braket{-10|{\psi}} |^2 + | \braket{-11|{\psi}} |^2= |\frac{1}{2}\braket{-10|-10})|^2 = \frac{1}{4}\\
 \end{aligned}
 $$
 
 
+\newpage
 
-### Task 4
+### Compute the expectation value and the posterior states
 
-### Task 5
+Expectation value:
+
+$$
+\newcommand{\f}[1]{\textbf{#1}}
+\begin{aligned}
+\braket{M_{\psi}} &= 1\cdot\frac{1}{4}+2\cdot\frac{1}{4}+3\cdot\frac{1}{4}+4\cdot\frac{1}{4}\\
+&=\frac{10}{4}=2.5
+\end{aligned}
+$$
+
+Posterior states:
+
+$\ket{\psi} = \frac{1}{2}(\ket{+10}+\ket{-10} + \ket{-01}-\ket{+01})$
+
+for $\lambda_1$:
+
+$$
+\begin{aligned}
+\pi_{1} &= \ket{+00}\bra{+00} + \ket{+01}\bra{+01}\\ 
+\ket{\phi}_{\lambda_1} &= \frac{\pi_1\ket{\psi}}{||\pi_1 \ket{\psi}||}\\
+&=\frac{-\frac{1}{2}\ket{+01}}{||-\frac{1}{2}\ket{+01}||} = \frac{-\frac{1}{2}\ket{+01}}{\frac{1}{2}}\\
+&=\ket{+01}\\
+\end{aligned}
+$$
+
+for $\lambda_2$:
+
+$$
+\begin{aligned}
+\pi_{2} &= \ket{+10}\bra{+10} + \ket{+11}\bra{+11}\\ 
+\ket{\phi}_{\lambda_2} &= \frac{\pi_2\ket{\psi}}{||\pi_2 \ket{\psi}||}\\
+&=\frac{\frac{1}{2}\ket{+10}}{||\frac{1}{2}\ket{+10}||} = \frac{\frac{1}{2}\ket{+10}}{\frac{1}{2}}\\
+&=\ket{+10}\\
+\end{aligned}
+$$
+
+for $\lambda_3$:
+
+$$
+\begin{aligned}
+\pi_{3} &= \ket{-00}\bra{-00} + \ket{-01}\bra{-01}\\ 
+\ket{\phi}_{\lambda_3} &= \frac{\pi_3\ket{\psi}}{||\pi_3 \ket{\psi}||}\\
+&=\frac{\frac{1}{2}\ket{-01}}{||\frac{1}{2}\ket{-01}||} = \frac{\frac{1}{2}\ket{-01}}{\frac{1}{2}}\\
+&=\ket{-01}\\
+\end{aligned}
+$$
+
+for $\lambda_4$:
+
+$$
+\begin{aligned}
+\pi_{4} &= \ket{-10}\bra{-10} + \ket{-11}\bra{-11}\\ 
+\ket{\phi}_{\lambda_4} &= \frac{\pi_4\ket{\psi}}{||\pi_4 \ket{\psi}||}\\
+&=\frac{\frac{1}{2}\ket{-10}}{||\frac{1}{2}\ket{-10}||} = \frac{\frac{1}{2}\ket{-10}}{\frac{1}{2}}\\
+&=\ket{-10}\\
+\end{aligned}
+$$
+
+\newpage
+
+### Use the measurement operator $\hat{M}$. List eigenspaces, dimensionalities and measurement probabilities
 
 Eigenstate:
 
 $$
-\begin{array}{rr}
+\begin{array}{rrr}
 Eigenvalue & Eigenspace & Dimension \\
 \hline \lambda_1 = 1 & \{(\ket{L\Phi^+} , \ket{R\Phi^+})  \} & 2 \\
  \lambda_2 = 2 &  \{(\ket{L\Phi^-} , \ket{R\Phi^-})  \} & 2 \\
@@ -301,15 +394,17 @@ Eigenvalue & Eigenspace & Dimension \\
 $$
 
 $$
-\ket{\psi} =\frac{1}{\sqrt{2}}(\ket{010} - \ket{101})=\ket{\textbf2}-\ket{\textbf5}\\
-\ket{L\Phi^+} = \frac{1}{2}\begin{bmatrix} 1\\\\\\1\\-i\\\\\\-i \end{bmatrix}
-\ket{R\Phi^+} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\1\\i\\\\\\i \end{bmatrix}
-\ket{L\Phi^-} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\-1\\-i\\\\\\i \end{bmatrix}
-\ket{R\Phi^-} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\-1\\i\\\\\\-i \end{bmatrix}\\
-\ket{L\Psi^+} =\frac{1}{{2}}\begin{bmatrix} \\1\\1\\\\\\-i\\-i\\\\ \end{bmatrix}
-\ket{R\Psi^-} =\frac{1}{{2}}\begin{bmatrix} \\1\\1\\\\\\i\\i\\\\ \end{bmatrix}
-\ket{L\Psi^-} =\frac{1}{{2}}\begin{bmatrix} \\1\\-1\\\\\\-i\\i\\\\ \end{bmatrix}
+\begin{aligned}
+\ket{\psi} &=\frac{1}{\sqrt{2}}(\ket{010} - \ket{101})=\ket{\textbf2}-\ket{\textbf5}\\
+\ket{L\Phi^+} &= \frac{1}{2}\begin{bmatrix} 1\\\\\\1\\-i\\\\\\-i \end{bmatrix},
+\ket{R\Phi^+} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\1\\i\\\\\\i \end{bmatrix},
+\ket{L\Phi^-} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\-1\\-i\\\\\\i \end{bmatrix},
+\ket{R\Phi^-} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\-1\\i\\\\\\-i \end{bmatrix},\\
+\ket{L\Psi^+} &=\frac{1}{{2}}\begin{bmatrix} \\1\\1\\\\\\-i\\-i\\\\ \end{bmatrix},
+\ket{R\Psi^-} =\frac{1}{{2}}\begin{bmatrix} \\1\\1\\\\\\i\\i\\\\ \end{bmatrix},
+\ket{L\Psi^-} =\frac{1}{{2}}\begin{bmatrix} \\1\\-1\\\\\\-i\\i\\\\ \end{bmatrix},
 \ket{R\Psi^-} =\frac{1}{2}\begin{bmatrix} \\1\\-1\\\\\\i\\-i\\\\ \end{bmatrix}
+\end{aligned}
 $$
 
 
@@ -349,19 +444,40 @@ P_m[\ket{\psi} \to 4] &= | \braket{\textbf1|{\psi}} |^2 + |- \braket{\textbf2|{\
 \end{aligned}
 $$
 
-### Task 6
+\newpage
+
+### Compute the expectation value and the posterior states
 
 Expectation value:
 $\braket{M}_\psi=0\cdot1+0\cdot2+\frac{1}{2}\cdot3+\frac{1}{2}\cdot4=7/2=3.5$
 
 Posterior states:
 $$
-\pi_3  = \ket{\textbf1} \bra{\textbf1}+\ket{\textbf2} \bra{\textbf2}+i\ket{\textbf5} \bra{\textbf5}+i\ket{\textbf6} \bra{\textbf6}+\ket{\textbf1} \bra{\textbf1}+\ket{\textbf2} \bra{\textbf2}-i\ket{\textbf5} \bra{\textbf5}-i\ket{\textbf6} \bra{\textbf6}\\
-\pi_4 = \ket{\textbf1} \bra{\textbf1}-\ket{\textbf2} \bra{\textbf2}-i\ket{\textbf5} \bra{\textbf5}+i\ket{\textbf6} \bra{\textbf6}+\ket{\textbf1} \bra{\textbf1}-\ket{\textbf2} \bra{\textbf2}+i\ket{\textbf5} \bra{\textbf5}-i\ket{\textbf6} \bra{\textbf6}\\
-\pi_3 : \ket{\psi}= \frac{1}{{\sqrt{8}}} (\ket{\textbf2}+ \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})\\
-\pi_4 :\ket{\psi} = \frac{1}{{\sqrt{8}}} (-\ket{\textbf2}-\ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})\\
-\ket{\psi} \to \frac{\pi_3\ket{\psi}}{||\pi_3\ket{\psi}||}=\frac{\frac{1}{{\sqrt{8}}} (\ket{\textbf2} + \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\frac{\sqrt{4}}{\sqrt{8}}}=\frac{(\ket{\textbf2} + \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\sqrt{4}}=\frac{(2\cdot\ket{\textbf2})}{\sqrt{4}}=\ket{0}\otimes\ket{1}\otimes\ket{0}\\
-\ket{\psi} \to \frac{\pi_4\ket{\psi}}{||\pi_4\ket{\psi}||}=\frac{\frac{1}{{\sqrt{8}}} (-\ket{\textbf2}-\ket{\textbf2}+i\ket{\textbf5}-i\ket{\textbf5})}{\frac{\sqrt{4}}{\sqrt{8}}}=\frac{(-\ket{\textbf2} - \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\sqrt{4}}=\frac{(-2\cdot\ket{\textbf2})}{\sqrt{4}}=-(\ket{0}\otimes\ket{1}\otimes\ket{0})\\
+\begin{aligned}
+\pi_3  &= \ket{\textbf1} \bra{\textbf1}+\ket{\textbf2} \bra{\textbf2}+i\ket{\textbf5} \bra{\textbf5}+i\ket{\textbf6} \bra{\textbf6}+\ket{\textbf1} \bra{\textbf1}+\ket{\textbf2} \bra{\textbf2}-i\ket{\textbf5} \bra{\textbf5}-i\ket{\textbf6} \bra{\textbf6}\\
+\pi_4 &= \ket{\textbf1} \bra{\textbf1}-\ket{\textbf2} \bra{\textbf2}-i\ket{\textbf5} \bra{\textbf5}+i\ket{\textbf6} \bra{\textbf6}+\ket{\textbf1} \bra{\textbf1}-\ket{\textbf2} \bra{\textbf2}+i\ket{\textbf5} \bra{\textbf5}-i\ket{\textbf6} \bra{\textbf6}\\
+\pi_3 &: \ket{\psi}= \frac{1}{{\sqrt{8}}} (\ket{\textbf2}+ \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})\\
+\pi_4 &:\ket{\psi} = \frac{1}{{\sqrt{8}}} (-\ket{\textbf2}-\ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})\\
+\ket{\psi} &\to \frac{\pi_3\ket{\psi}}{||\pi_3\ket{\psi}||}=\frac{\frac{1}{{\sqrt{8}}} (\ket{\textbf2} + \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\frac{\sqrt{4}}{\sqrt{8}}}=\frac{(\ket{\textbf2} + \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\sqrt{4}}=\frac{(2\cdot\ket{\textbf2})}{\sqrt{4}}=\ket{0}\otimes\ket{1}\otimes\ket{0}\\
+\ket{\psi} &\to \frac{\pi_4\ket{\psi}}{||\pi_4\ket{\psi}||}=\frac{\frac{1}{{\sqrt{8}}} (-\ket{\textbf2}-\ket{\textbf2}+i\ket{\textbf5}-i\ket{\textbf5})}{\frac{\sqrt{4}}{\sqrt{8}}}\\
+&=\frac{(-\ket{\textbf2} - \ket{\textbf2} +i\ket{\textbf5}-i\ket{\textbf5})}{\sqrt{4}}=\frac{(-2\cdot\ket{\textbf2})}{\sqrt{4}}=-(\ket{0}\otimes\ket{1}\otimes\ket{0})\\
+\end{aligned}
 $$
 
-### Task 7
+### Realization of $\hat{M}$ on a quantum computer with only (partial) standard measurements
+
+To realize $\hat{M}$ on a quantum computer with only (partial) standard measurements,
+we need a unitary operator $U$ that maps the eigenspaces of $\hat{M}$ onto 
+the standard basis.
+
+$Eig(\hat{M}, \lambda_k) \overset{U}{\mapsto} Eig(M_{std}, \lambda_k)$
+
+After measuring and calculating the posterior states in $M_{std}$, 
+we then revert back by $U^{\dagger}$.
+
+$$
+\Qcircuit @C=1em @R=.7em {
+    & \multigate{1}{U} & \meter & \multigate{1}{U^\dag} & \qwa\\
+    & \ghost{U} & \qw & \ghost{U^\dag} & \qwa
+}
+$$
