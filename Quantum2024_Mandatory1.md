@@ -293,10 +293,10 @@ Eigenstate:
 $$
 \begin{array}{rr}
 Eigenvalue & Eigenspace & Dimension \\
-\hline \lambda_1 = 1 & \{\frac{1}{2} (\ket{L\Phi^+} , \ket{R\Phi^+})  \} & 2 \\
- \lambda_2 = 2 &  \{\frac{1}{2} (\ket{L\Phi^-} , \ket{R\Phi^-})  \} & 2 \\
- \lambda_3 = 3 &  \{\frac{1}{2} (\ket{L\Psi^+} , \ket{R\Psi^+})  \} & 2 \\
- \lambda_4 = 4 &  \{\frac{1}{2} (\ket{L\Psi^-} , \ket{R\Psi^-})  \} & 2 \\
+\hline \lambda_1 = 1 & \{(\ket{L\Phi^+} , \ket{R\Phi^+})  \} & 2 \\
+ \lambda_2 = 2 &  \{(\ket{L\Phi^-} , \ket{R\Phi^-})  \} & 2 \\
+ \lambda_3 = 3 &  \{(\ket{L\Psi^+} , \ket{R\Psi^+})  \} & 2 \\
+ \lambda_4 = 4 &  \{(\ket{L\Psi^-} , \ket{R\Psi^-})  \} & 2 \\
 \end{array}
 $$
 
