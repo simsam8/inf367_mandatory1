@@ -60,8 +60,8 @@ $$
 $$
 \begin{aligned}\\
 \ket{\phi} &=\frac{1}{\sqrt{6}}(2\ket{00}-i(\ket{01} - \ket{10})) \\
-(H \otimes H) \ket{\phi} &=\frac{1}{2} (\ket{00} \bra{00}\ket{\phi} \quad\to -i\ket{00}\\
-&\quad + \ket{00}\bra{01}\ket{\phi}\quad \to i\ket{00}\\
+(H \otimes H) \ket{\phi} &=\frac{1}{2} (\ket{00} \bra{00}\ket{\phi} \quad\to 2\ket{00}\\
+&\quad + \ket{00}\bra{01}\ket{\phi}\quad \to -i\ket{00}\\
 &\quad + \ket{00}\bra{10}\ket{\phi}\quad \to i\ket{00}\\
 &\quad + \ket{00}\bra{11}\ket{\phi}\quad \to 0\\
 &\quad + \ket{01}\bra{00}\ket{\phi}\quad \to 2\ket{01}\\
@@ -400,7 +400,8 @@ $$
 
 $$
 \begin{aligned}
-\ket{\psi} &=\frac{1}{\sqrt{2}}(\ket{010} - \ket{101})=\ket{\textbf2}-\ket{\textbf5}\\
+\ket{\psi} &=\frac{1}{\sqrt{2}}(\ket{010} - \ket{101})=
+\frac{1}{\sqrt{2}}(\ket{\textbf2}-\ket{\textbf5})\\
 \ket{L\Phi^+} &= \frac{1}{2}\begin{bmatrix} 1\\\\\\1\\-i\\\\\\-i \end{bmatrix},
 \ket{R\Phi^+} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\1\\i\\\\\\i \end{bmatrix},
 \ket{L\Phi^-} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\-1\\-i\\\\\\i \end{bmatrix},
