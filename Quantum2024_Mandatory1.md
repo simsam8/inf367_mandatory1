@@ -1,4 +1,9 @@
 ---
+title: INF367 Mandatory Assignment 1
+author:
+    - "Simon Vedaa"
+    - "Christoffer Slettebø"
+    - "Khalil Ibrahim"
 numbersections: true
 header-includes:
 - \usepackage{braket}
