@@ -407,7 +407,7 @@ $$
 \ket{L\Phi^-} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\-1\\-i\\\\\\i \end{bmatrix},
 \ket{R\Phi^-} =\frac{1}{{2}}\begin{bmatrix} 1\\\\\\-1\\i\\\\\\-i \end{bmatrix},\\
 \ket{L\Psi^+} &=\frac{1}{{2}}\begin{bmatrix} \\1\\1\\\\\\-i\\-i\\\\ \end{bmatrix},
-\ket{R\Psi^-} =\frac{1}{{2}}\begin{bmatrix} \\1\\1\\\\\\i\\i\\\\ \end{bmatrix},
+\ket{R\Psi^+} =\frac{1}{{2}}\begin{bmatrix} \\1\\1\\\\\\i\\i\\\\ \end{bmatrix},
 \ket{L\Psi^-} =\frac{1}{{2}}\begin{bmatrix} \\1\\-1\\\\\\-i\\i\\\\ \end{bmatrix},
 \ket{R\Psi^-} =\frac{1}{2}\begin{bmatrix} \\1\\-1\\\\\\i\\-i\\\\ \end{bmatrix}
 \end{aligned}
