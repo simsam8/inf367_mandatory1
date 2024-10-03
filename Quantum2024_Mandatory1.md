@@ -306,10 +306,10 @@ $$
 \newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
 \ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{\f{2}} - \ket{\f{5}})\\
-\ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{010} - \ket{101}) = \frac{1}{2}(\ket{+10}+\ket{-10} - \ket{-01}-\ket{+01})\\
+\ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{010} - \ket{101}) = \frac{1}{2}(\ket{+10}+\ket{-10} + \ket{-01}-\ket{+01})\\
 P_m[\ket{\psi} \to 1] &= | \braket{+00|{\psi}} |^2 + | \braket{+01|{\psi}} |^2= |-\frac{1}{2}\braket{+01|+01}|^2 = \frac{1}{4}\\
 P_m[\ket{\psi} \to 2] &= | \braket{+10|{\psi}} |^2 + | \braket{+11|{\psi}} |^2= |\frac{1}{2}\braket{+10|+10}|^2 = \frac{1}{4} \\
-P_m[\ket{\psi} \to 3] &= | \braket{-00|{\psi}} |^2 + | \braket{-01|{\psi}} |^2= |-\frac{1}{2}\braket{-01|-01})|^2 = \frac{1}{4}\\
+P_m[\ket{\psi} \to 3] &= | \braket{-00|{\psi}} |^2 + | \braket{-01|{\psi}} |^2= |\frac{1}{2}\braket{-01|-01})|^2 = \frac{1}{4}\\
 P_m[\ket{\psi} \to 4] &= | \braket{-10|{\psi}} |^2 + | \braket{-11|{\psi}} |^2= |\frac{1}{2}\braket{-10|-10})|^2 = \frac{1}{4}\\
 \end{aligned}
 $$
@@ -331,7 +331,7 @@ $$
 
 Posterior states:
 
-$\ket{\psi} = \frac{1}{2}(\ket{+10}+\ket{-10} - \ket{-01}-\ket{+01})$
+$\ket{\psi} = \frac{1}{2}(\ket{+10}+\ket{-10} + \ket{-01}-\ket{+01})$
 
 for $\lambda_1$:
 
@@ -339,7 +339,7 @@ $$
 \begin{aligned}
 \pi_{1} &= \ket{+00}\bra{+00} + \ket{+01}\bra{+01}\\ 
 \ket{\phi}_{\lambda_1} &= \frac{\pi_1\ket{\psi}}{||\pi_1 \ket{\psi}||}\\
-&=\frac{-\frac{1}{2}\ket{+01}}{||\frac{1}{2}\ket{+01}||} = \frac{-\frac{1}{2}\ket{+01}}{\frac{1}{2}}\\
+&=\frac{-\frac{1}{2}\ket{+01}}{||-\frac{1}{2}\ket{+01}||} = \frac{-\frac{1}{2}\ket{+01}}{\frac{1}{2}}\\
 &=\ket{+01}\\
 \end{aligned}
 $$
@@ -361,7 +361,7 @@ $$
 \begin{aligned}
 \pi_{3} &= \ket{-00}\bra{-00} + \ket{-01}\bra{-01}\\ 
 \ket{\phi}_{\lambda_3} &= \frac{\pi_3\ket{\psi}}{||\pi_3 \ket{\psi}||}\\
-&=\frac{-\frac{1}{2}\ket{-01}}{||\frac{1}{2}\ket{-01}||} = \frac{-\frac{1}{2}\ket{-01}}{\frac{1}{2}}\\
+&=\frac{\frac{1}{2}\ket{-01}}{||\frac{1}{2}\ket{-01}||} = \frac{\frac{1}{2}\ket{-01}}{\frac{1}{2}}\\
 &=\ket{-01}\\
 \end{aligned}
 $$
