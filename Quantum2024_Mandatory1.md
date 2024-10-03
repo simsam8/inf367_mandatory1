@@ -415,11 +415,12 @@ $$
 
 
 $$
+\newcommand{\f}[1]{\textbf{#1}}
 \begin{aligned}
-M &= 1\cdot(\ket{0}+\ket{3}-i\ket{4}-i\ket{7} + \ket{0}+\ket{3}+i\ket{4}+i\ket{7})\\
-&+ 2\cdot(\ket{0}-\ket{3}-i\ket{4}+i\ket{7} + \ket{0}-\ket{3}+i\ket{4}-i\ket{7})\\
-&+ 3\cdot(\ket{1}+\ket{2}-i\ket{5}-i\ket{6} + \ket{1}+\ket{2}+i\ket{5}+i\ket{6})\\
-&+ 4\cdot(\ket{1}-\ket{2}-i\ket{5}+i\ket{6} + \ket{1}-\ket{2}+i\ket{5}-i\ket{6})
+M &= 1\cdot(\ket{\f{0}}\bra{\f{0}}+\ket{\f{3}}\bra{\f{0}}+\ket{\f{0}}\bra{\f{3}}+\ket{\f{3}}\bra{\f{3}}+\ket{\f{4}}\bra{\f{4}}+\ket{\f{4}}\bra{\f{7}}+\ket{\f{7}}\bra{\f{4}}+\ket{\f{7}}\bra{\f{7}})\\
+&+ 2\cdot(\ket{\f{0}}\bra{\f{0}}-\ket{\f{3}}\bra{\f{0}}-\ket{\f{0}}\bra{\f{3}}+\ket{\f{3}}\bra{\f{3}}+\ket{\f{4}}\bra{\f{4}}-\ket{\f{4}}\bra{\f{7}}-\ket{\f{7}}\bra{\f{4}}+\ket{\f{7}}\bra{\f{7}})\\
+&+ 3\cdot(\ket{\f{1}}\bra{\f{1}}+\ket{\f{1}}\bra{\f{2}}+\ket{\f{2}}\bra{\f{1}}+\ket{\f{2}}\bra{\f{2}}+\ket{\f{5}}\bra{\f{5}}+\ket{\f{5}}\bra{\f{6}}+\ket{\f{6}}\bra{\f{5}}+\ket{\f{6}}\bra{\f{6}})\\
+&+ 4\cdot(\ket{\f{1}}\bra{\f{1}}-\ket{\f{1}}\bra{\f{2}}-\ket{\f{2}}\bra{\f{1}}+\ket{\f{2}}\bra{\f{2}}+\ket{\f{5}}\bra{\f{5}}-\ket{\f{5}}\bra{\f{6}}-\ket{\f{6}}\bra{\f{5}}+\ket{\f{6}}\bra{\f{6}})
 \end{aligned}
 $$
 
